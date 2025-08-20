@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grand-Prix Details</title>
+    </head>
+    <body>
+    <h1>Grand-Prix Details</h1>
+    <p id="race-name" class="race-name"></p> 
+    <div><img id="flag" src="flag" class="flagimg"></div>
+    <script class="racename-script"> // This script finds the name of the race selected and pushes it onto race-name
+        // Assume the selected race name is passed via query parameter "race"
+        function getRaceNameFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('race_name') || 'Unknown Race';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const raceName = params.get('race_name') || 'Unknown Race';
+    document.getElementById('race-name').textContent = raceName;
+
+    fetch(`http://127.0.0.1:8000/raceinfo?race=${encodeURIComponent(raceName)}`)
+        .then(res => {
+            if (!res.ok) throw new Error("Race info not found");
+            return res.json();
+        })
+        .then(data => {
+            document.getElementById('location').textContent = "Location: " + data.location;
+            document.getElementById('date').textContent = "Scheduled date: " + data.date;
+            document.getElementById('avgtemp').textContent = "Average temperature: " + data.avgtemp;
+            document.getElementById('avgtracktemp').textContent = "Average track temperature: " + data.avgtracktemp;
+            document.getElementById('lastwinner').textContent = "Last winner: " + data.lastwinner;
+            document.getElementById('avglaptime').textContent = "Average lap time: " + data.avglaptime;
+            document.getElementById('recordlaptime').textContent = "Record lap time: " + data.recordlaptime;
+            document.getElementById('race-image').src = data.raceimage;
+            document.getElementById('flag').src = data.flag;
+            
+        })
+        .catch(err => console.error("Fetch error:", err));
+});
+  </script>
+    <div><!-- Map -->
+        <img id="race-image" src="race-image" class="map">
+        <P style="text-align: center;">        </P>
+    </div>
+    <div id="track"> <!-- section for lap times -->
+        <p id="avglaptime">Average Lap times:</p>
+        <p id="recordlaptime">Record Lap time:</p>
+    </div>
+    <div id="track"> <!-- section for track specific data -->
+        <p id="location">Location:    </p> 
+        <p id="date">Scheduled date:           </p>
+        <p id="avgtemp">Average temperature:        </p>
+        <p id="avgtracktemp">Average track temperature: </p>
+        <p id="lastwinner">Last winner:   </p>  
+    </div>
+    <div>
+        <h1 class="top-border"></h1>
+        <h1 class="predictionhead">Result predictions</h1>
+    </div>
+    <table id="race-table"> <!-- Data will be automatically scripted in based on manual csv changes. will automate process in the future with ML model-->
+    <thead>
+        <tr>
+            <th>Pos.</th>
+            <th>Team</th>
+            <th>Driver</th>
+            <th>Rating</th>
+            <th>Performance</th>
+            <th>Podium Prob.</th>
+            <th>Pts. Prob.</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+    </table>
+    <script>
+            fetch("http://127.0.0.1:8000/tabledata")
+                .then(res => res.json())
+                .then(data => {
+                const tbody = document.querySelector("#race-table tbody");
+
+            data.forEach(row => {
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+                <td>${row.pos}</td>
+                <td>${row.team}</td>
+                <td>${row.driver}</td>
+                <td>${row.rating}</td>
+                <td>${row.performance}</td>
+                <td>${row.podiumprob}</td>
+                <td>${row.ptsprob}</td>
+                <td>${row.points}</td>
+                `;
+
+                tbody.appendChild(tr);
+            });
+        })
+        .catch(err => console.error("Fetch error:", err));
+        </script>
+    </body>
+</html>

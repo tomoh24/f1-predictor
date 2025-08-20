@@ -1,0 +1,7 @@
+name,location,date,avgtemp,avgtracktemp,lastwinner,avglaptime,recordlaptime,raceimage,flag
+Australian Grand Prix,"Melbourne, Australia",March 16th,23 °C,19 °C,Lando Norris (McLaren), 1:24:841, 1:19:813 (LEC) (Ferrari), images/Australia-Circuit-2025.png,images/australiaflag.png
+Bahrain Grand Prix,"Sakhir, Bahrain",April 13th,ex, ex,Oscar Piastri (McLaren),1:31:001,1:27:264 (HAM) (Mercedes), images/bahrain.png,images/bahrainflag.png
+Saudi Arabian Grand Prix,"Jeddah, Saudi Arabia",April 20th, ex, ex, Oscar Piastri (McLaren), 1:21:06.758, example, images/saudi.png,images/saudiflag.png
+Chinese Grand Prix,"Shanghai, China",March 23rd,ex, ex,Charles Leclerc (Ferrari),1:32:001,1:28:264 (VER) (Red Bull), images/china.png,images/chinaflag.png
+Japanese Grand Prix,"Suzuka, Japan",April 4th,ex, ex,Max Verstappen (Red Bull),1:27:001,1:23:264 (VER) (Red Bull), images/japan.png,images/japanflag.png
+Miami Grand Prix,"Miami, USA",May 4th,ex, ex,Lando Norris (McLaren),1:30:001,1:26:264 (LEC) (Ferrari), images/miami.png,images/usaflag.png

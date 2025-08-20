@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Predictor - Upcoming Races</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Predictor - Upcoming Races</title>
+</head>
+<body>
+    <h1>F1 Predictor</h1>
+    <h1 class="header">Upcoming F1 Races</h1>
+    <ul id="race-list" class="races">
+        <!-- Races will be injected here -->
+    </ul>
+
+    <script>
+        async function loadRaces() {
+            try {
+            const response = await fetch("http://127.0.0.1:8000/races/upcoming");
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const races = await response.json();
+            const list = document.getElementById("race-list");
+            list.innerHTML = "";
+
+            races.forEach(race => {
+                const li = document.createElement("li");
+                li.className = "race-item";
+
+                const btn = document.createElement("button");
+                btn.className = "race-btn";
+                btn.textContent = `${race.name} — ${race.date}`;
+                btn.type = "button";
+
+                const dropdown = document.createElement("div");
+                dropdown.className = "dropdown";
+
+                // Qualifying Details link
+                const qualLink = document.createElement("a");
+                qualLink.href = `qualifying.html?race_id=${race.race_id}`;
+                qualLink.textContent = "Qualifying Details";
+
+                // Grand Prix Details link, now includes race_name in query string
+                const gpLink = document.createElement("a");
+                gpLink.href = `grandprix.html?race_id=${race.race_id}&race_name=${encodeURIComponent(race.name)}`;
+                gpLink.textContent = "Grand Prix Details";
+
+                dropdown.appendChild(qualLink);
+                dropdown.appendChild(gpLink);
+
+                btn.addEventListener("click", (e) => {
+                // Hide any other open dropdowns
+                document.querySelectorAll(".dropdown").forEach(d => {
+                    if (d !== dropdown) d.style.display = "none";
+                });
+                // Toggle this dropdown
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+                e.stopPropagation();
+                });
+
+                // Hide dropdown when clicking outside
+                document.addEventListener("click", () => {
+                dropdown.style.display = "none";
+                });
+
+                li.appendChild(btn);
+                li.appendChild(dropdown);
+                list.appendChild(li);
+            });
+            } catch (error) {
+            console.error("Fetch error:", error);
+            const list = document.getElementById("race-list");
+            list.innerHTML = "<li>Could not load upcoming races.</li>";
+            }
+        }
+            
+        window.addEventListener("DOMContentLoaded", loadRaces);
+    </script>
+</body>
+<footer>
+    <p>© 2025 F1 Predictor. All rights reserved.</p>
+    <p>Created by tomoh24</p>
+</footer>
+</html>

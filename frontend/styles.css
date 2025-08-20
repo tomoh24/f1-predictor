@@ -1,0 +1,164 @@
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.5em;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    background-color: #f2f2f2;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 6px;
+}
+   
+.racename-script{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.race-item {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.race-btn {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    background: #e10600;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.race-btn:hover {
+    background: #b30000;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 2.5em;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    min-width: 180px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.75em 1em;
+    color: #222;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.dropdown a:last-child {
+    border-bottom: none;
+}
+
+.dropdown a:hover {
+    background: #f2f2f2;
+}
+
+.race-name {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+}
+
+#track {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+#flag {
+    display: inline;
+    width: 120px;
+    height: 60px;
+    right: 150px;
+    position: relative;
+    left: 240px;
+
+}
+
+#race-image {
+    width:750px;
+    height:480px;
+    position: relative;
+    right: 80px;
+}
+
+.top-border {
+    border-top: 2px solid #e10600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.predictionhead {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+#laptimes {
+    background-color: #f9f9f9;
+}
+
+
+ .dropdown-container {
+    margin-top: 20px;
+}
+
+.completed-races-summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.completed-race-item {
+     margin: 5px 0;
+}
+
+.completed-race-btn {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 0.9em;
+}
