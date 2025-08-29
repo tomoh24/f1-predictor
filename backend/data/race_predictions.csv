@@ -29,3 +29,23 @@ race_id,pos,team,driver,rating,performance,podium_prob,pts_prob,points,expected_
 3,8,Aston Martin,Fernando Alonso,93.5,94.0,69%,74%,+4,8
 3,9,Aston Martin,Lance Stroll,92.2,92.7,66%,71%,+2,9
 3,10,Kick Sauber,Valtteri Bottas,91.8,92.3,63%,68%,+1,10
+15,1,McLaren,Oscar Piastri,1,1,1,1,1,1
+15,2,McLaren,Lando Norris,1,1,1,1,1,1
+15,3,Ferrari,Charles Leclerc,1,1,1,1,1,1
+15,4,Red Bull,Max Verstappen,1,1,1,1,1,1
+15,5,Mercedes,George Russell,1,1,1,1,1,1
+15,6,Aston Martin,Fernando Alonso,1,1,1,1,1,1
+15,7,Ferrari,Lewis Hamilton,1,1,1,1,1,1
+15,8,Aston Martin,Lance Stroll,1,1,1,1,1,1
+15,9,VCARB,Isack Hadjar,1,1,1,1,1,1
+15,10,Kick Sauber,Gabriel Bortoleto,1,1,1,1,1,1
+15,11,Red Bull,Yuki Tsunoda,1,1,1,1,1,1
+15,12,VCARB,Liam Lawson,1,1,1,1,1,1
+15,13,Mercedes,Kimi Antonelli,1,1,1,1,1,1
+15,14,Kick Sauber,Nico Hulkenberg,1,1,1,1,1,1
+15,15,Haas,Oliver Bearman,1,1,1,1,1,1
+15,16,Alpine,Pierre Gasly,1,1,1,1,1,1
+15,17,Haas,Estaban Ocon,1,1,1,1,1,1
+15,18,Alpine,Franco Colapinto,1,1,1,1,1,1
+15,19,Williams,Alex Albon,1,1,1,1,1,1
+15,20,Williams,Carlos Sainz,1,1,1,1,1,1

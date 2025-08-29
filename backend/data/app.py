@@ -114,7 +114,7 @@ def generate_fallback_predictions(race_id: int):
     elif race_id == 2:  # Chinese GP - mixed characteristics
         pass
     elif race_id == 3:  # Japanese GP - high speed corners
-        pass
+        pass 
     
     return base_predictions
 

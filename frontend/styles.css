@@ -310,7 +310,8 @@ body {
 }
 
 .stat-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-10px);
+    background-color: lightyellow;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -628,6 +629,23 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.more {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.more h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
 .section-header h2 {
     font-size: 2rem;
     font-weight: 600;
@@ -921,4 +939,8 @@ body {
     .predictions-table td {
         padding: 0.5rem 0.25rem;
     }
+}
+
+.button {
+    text-decoration: none;
 }
